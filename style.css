@@ -1,0 +1,314 @@
+/* SYNTAX 
+   selector {
+	  property: value; --- this is declaration
+} */
+
+/* 
+css refers to all elements as boxes
+*/
+
+/* header {
+	removing header element that consists h1 element's content, which we style below anyway
+	padding: 10px;
+	border: 5px solid #a13442;
+	margin: 10px;
+} */
+
+/*  
+POSITION - we change document flow(top, bottom, right, left), and positioning context (down from the top of what? and that defined by html, body, viewport)
+
+* STATIC - automatically applied position property (positioning documents in the normal document flow)
+** ABSOLUTE - takes the element out of the normal document flow ( 1) positions the element relative to the containing element (not the parent); 2) however, if we add position absolute to the parent element, child will inherit)
+*** RELATIVE - 
+(positon: relative (As a special, use “relative” positioning with no displacement (just setting position: relative ) to make an element a frame of reference, so that you can use “absolute” positioning for elements that are inside it (in markup))
+top: 0 - should CHANCGE BY ZERO
+top:50px - moved by 50px)
+
+**** FIXED - always refers to the viewport
+(position: fixed;
+top:0;
+	sticks on top of the page)
+ */
+
+/* 
+ responsive font-size
+ em and rem - scalable units (2em for h1)
+ default font-size 16px (h1 - 32px);
+em is a CSS unit relative to the font size of the parent element, while rem is a CSS unit relative to the font size of an html element
+using rem - simply changing the font-size by simply changing the font-size of the root element
+ */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&display=swap');
+
+/* MOBILE FIRST!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+html {
+  background-color: #fccc00;
+  font-size: 100%;
+  /* 100% - no changes, default values */
+  font-family: 'Kanit', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #002a86;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+a:active {
+  color: #9f1000;
+}
+
+footer {
+  border-bottom: 20px solid #9f1000;
+}
+
+/* modal */
+.backdrop {
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+.modal {
+  display: none;
+  color: white;
+  position: fixed;
+  background: #002a86;
+  padding: 10px;
+  top: 200px;
+  left: calc(50% - 140px);
+  z-index: 1;
+}
+
+.modal h1 {
+  margin: 0;
+}
+
+.modal button {
+  background: #fccc00;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.modal button:hover,
+.modal button:active {
+  background: #fcce00ef;
+}
+
+.modal button:focus {
+  outline: none;
+}
+
+@media (min-width: 400px) {
+  .modal {
+    width: 360px;
+    left: calc(50% - 190px);
+  }
+}
+
+/* header */
+.fixed-bar {
+  height: 70px;
+  /*font-size: 2em - em depends on the parent element */
+}
+
+.page-title {
+  font-weight: 700;
+  position: fixed; /*excluded this class from document flow and nav was hidden, and fixed-bar class was added 70px */
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #002a86;
+  color: white;
+  /* top+bottom and left+right*/
+  /* top right bottom left*/
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+  font-size: 32px; /*to make it works in the older browsers, where em and rem cant be displayed correctly*/
+  font-size: 1.5rem;
+  /* rem - depends on the root element */
+  border-top: 20px solid #9f1000;
+}
+
+/* nav, we also have an anchor tag inside the ul*/
+.navigation {
+  text-align: center;
+  padding: 0;
+}
+
+.navigation li {
+  display: inline-block;
+  width: 20%;
+  color: #002a86;
+  border: 6px solid #9f1000;
+  border-radius: 10px;
+  font-size: 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* main */
+
+.text {
+  display: none;
+}
+
+.images {
+  display: flex;
+  /* this is a container */
+  flex-wrap: wrap;
+}
+
+.images img {
+  /* this is an item */
+  width: 100%; /* general rule */
+  /* min and max width for more responsiveness */
+  min-width: 200px;
+  height: 100%;
+}
+
+.feedback {
+  /* DIDNT UNDERSTAND WHY WE NEED POSITION */
+  position: relative;
+  /* the good thing to use the positon relative in this case, is to set the 'Do you like my page?' ON the top of images. by setting bottom - 18px we pushed the feedback sentence higher */
+  bottom: 18px;
+  background-color: #002a86;
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+/* form */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  color: #002a86;
+}
+
+/* Name, Mail, Message */
+label {
+  align-self: flex-start;
+  margin-top: 16px;
+  margin-bottom: 5px;
+}
+
+.form-input:hover {
+  background-color: #dfe3eb;
+}
+
+.form-input:focus,
+.form-input:hover {
+  cursor: pointer;
+}
+
+.form-input {
+  background: white;
+  border: 2px solid #002a86;
+  width: 100%;
+  padding: 3px;
+}
+
+textarea {
+  resize: none; /* removes the lil triangle in the right bottom angle*/
+  padding: 3px;
+}
+
+.submit-button {
+  color: white;
+  background-color: #9f1000;
+  font-weight: 700;
+  margin-top: 10px;
+  height: 30px;
+  width: 70px;
+  border: none;
+  border-radius: 5px;
+}
+
+.submit-button:active,
+.submit-button:hover {
+  background-color: #8c3a31;
+  cursor: pointer;
+}
+
+/* footer */
+.review-clients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-flow: row wrap; as row is a standard value, then: */
+  flex-wrap: wrap;
+  /* border: 6px solid #002a86; */
+  /* border-radius: 30px; */
+  margin: 10px;
+}
+
+.review-clients img {
+  width: 120px;
+  margin: 5px;
+  border-style: none;
+}
+
+.review-clients p {
+  width: 430px;
+  text-align: center;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #00226b;
+}
+
+.review-clients i {
+  font-weight: 200;
+}
+
+@media (min-width: 400px) {
+  .navigation li {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 700px) {
+  .text {
+    background-color: gray;
+    padding: 0;
+    display: flex;
+  }
+
+  .text p {
+    background-color: #002a86;
+    color: white;
+    text-align: center;
+    margin: 0;
+    width: 50%;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  .images img {
+    width: 50%;
+  }
+
+  .form {
+    width: 400px;
+  }
+}

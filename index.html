@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- telling the browser to turn on the web mode -->
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Los Pollos Hermanos</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="/images/favicon.ico">
+
+    </head>
+
+    <body>
+        <div class="backdrop"></div>
+        <div class="modal">
+            <h1>Get in Touch</h1>
+            <p>Contact us on +1 305-371-8161 to order a delivery!</p>
+            <a href="contact/index.html"> <button>Contact</button></a>
+        </div>
+        <!-- wraps the entire CONTENT -->
+        <!-- SEMANTIC ELEMENTS - p, h1, head, body, footer (browser knows what is this - paragraph, header, footer etc)-->
+        <!-- NON-SEMANTIC ELEMENTS - div, span (dont have meaning, can be anything)-->
+        <!-- Components - header + content - h1 -->
+        <!-- Components - nav + content - ul -->
+        <!-- Components - main + content - p, img, div -->
+        <!-- Components - footer + content - div, span -->
+        <!-- block level (p, h1-6 etc) and inline element(span, a, img) -->
+        <header class="fixed-bar">
+            <h1 class="page-title">Los Pollos Hermanos</h1>
+        </header>
+        <nav>
+            <ul class="navigation">
+                <li>Home</li>
+                <li><a href="contact/index.html">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="text">
+                <p>Welcome to Los Pollos Hermanos!</p>
+                <p>Always delivered with a friendly smile!</p>
+            </div>
+            <div class="images">
+                <img class="image" src="images/lph.png" alt="Image of Los Pollos Hermanos restaurant in Albuqurque">
+                <img class="image" src="images/gus.png" alt="Image of Gustavo Fring, restaurant CEO">
+            </div>
+            <p class="feedback">Please share your thoughts on our restaurant!</p>
+        </main>
+        <footer>
+            <!-- change p to span to make the text and an image next to each other and add element div to wrap the image and the comment of the person -->
+            <div class="review-clients">
+                <img src="images/jesse.png" alt="Image of Jesse">
+                <p>Jesse Pinkman <i>left a comment: </i> Awesome place, Mr. Fring! Great work, keep it up!</p>
+            </div>
+            <div class="review-clients">
+                <img src="images/mr.white.png" alt="Image of Mr. White">
+                <p>Walter White <i>left a comment: </i> Looks really nice, Gus! Curly fries are my favorite!</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+
+</html>

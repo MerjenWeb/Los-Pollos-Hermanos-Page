@@ -1,0 +1,93 @@
+/* 
+display: flex; turns a parent into a flex container, children become flex items
+
+properties for flex-container:
+flex-flow, justify-content, align-content, align-items
+
+properties for flex-items:
+order, flex, align-self
+*/
+
+/* 
+flex-direction - main axis vs cross axis
+row:
+main axis - from top left corner to the right
+cross axis - from top left corner to the bottom
+row-reverse:
+main axis - from top right corner to the left
+cross axis - from top right corner to the bottom
+column: 
+main axis - from top left corner to the bottom
+cross axis - from top left corner to the right
+column-reverse:
+main axis - from bottom left corner to the top
+cross axis - from bottom left corner to the right 
+*/
+
+hmtl {
+	background-color: orange;
+	padding: 10px;
+}
+
+body {
+	background-color: yellow;
+	padding: 10px;
+	margin: 0;
+}
+
+/* flexbox */
+
+.parent {
+	background-color: rgb(219, 210, 252);
+	margin: 10px;
+	padding: 30px;
+	height: 600px;
+	/* display: inline-flex; parent behaves like an inline element, it only needs the space that is required to display the content; elements are not decreasing the width, not changing basically */
+	display: flex; /*this is a flex container now */
+	/*flex-flow: row nowrap; standard two values (row - flex direction), nowrap - flex-wrap,  it is a combined property*/
+	flex-flow: column nowrap; /*flex-direction, flex-wrap*/
+	align-items: center; /* stretch is a default value; align items property only refers to the position of our items relating to the cross axis (of row and column) */
+	justify-content: flex-start; /* refers to the positioning along the main axis */
+	/* align-content: center; only works if it has more than one line */
+}
+
+.div1 {
+	background-color: rgb(248, 130, 150);
+	margin: 5px;
+}
+
+.div2 {
+	background-color: rgb(248, 130, 150);
+	margin: 5px;
+	width: 150px;
+	font-size: 30px;
+	/* align-self property - refers to a single element, this defines how flex-item is positioned related to the cross axis, flex-start - at the start of the cross axis */
+}
+
+.div3 {
+	background-color: rgb(248, 130, 150);
+	margin: 5px;
+	height: 150px;
+}
+
+.div4 {
+	background-color: rgb(248, 130, 150);
+	margin: 5px;
+	width: 150px;
+	height: 150px;
+}
+
+.div5 {
+	background-color: rgb(248, 130, 150);
+	margin: 5px;
+	width: 200px;
+	/* flex: 0 1 auto; - standard value of flex-grow, flex-shrink, flex-basis. Flex-grow - changing it will change the width of the item, so it will occupy the entire free space. Flex-shrink - helps us to decrease the size of the items. Flex-basis defines the starting size or the standard size of the element (flex-items) depending on the main axis (main axis for row and column are different, so when flex-direction is set to row the flex basis will refer to width, but when column is set it will refer to height)*/
+	flex: 0 1 auto;
+}
+
+.div6 {
+	background-color: rgb(248, 130, 150);
+	margin: 5px;
+	width: 200px;
+	flex: 0 1 100px;
+}

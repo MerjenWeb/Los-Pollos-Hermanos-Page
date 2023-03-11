@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Los Pollos Hermanos</title>
+        <link rel="stylesheet" href="../style.css">
+        <!-- ../ - jumping one level up -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+    </head>
+
+    <body>
+        <header class="fixed-bar">
+            <h1 class="page-title">Los Pollos Hermanos</h1>
+            <!-- I also covered forms here -->
+        </header>
+        <nav>
+            <ul class="navigation">
+                <li><a href="../index.html">Home</a></li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <!-- all the inputs in form tag are going to be submitted to wherever your form goes to
+        if we leave it blank, so <form></form> - it's going to submit to the page youre currently on, but when we add a keyword 'ACTION', we can specify other page that we want to submit the results. the next thing to add is 'METHOD' : GET (going to append it to url) or POST (to save information to server. browsers can only render get request, so we dont use post.)
+        -->
+        <form class="form" action="../index.html" method="GET" enctype="multipart/form-data">
+            <label for="name">Name</label>
+            <input class="form-input" type="text" name="name" id="name" required>
+            <!-- in order for an input to show up as a form , we need to specify the 'name' for the input, so we can use it when we submit it -->
+            <!-- 'for' attribute in label is set to the id of the element we want to highlight whenever we want to click on the label -->
+            <!-- default type for input is text, so you always want to specify the type, for ex. type - password hides the characters-->
+            <!-- 'value' attribute - to set a default value, useful if you already know the value, because if we click submit - it submits that value -->
+            <!-- 'placeholder' attribute - useful for when you want to give a little more information to your user, it doesnt submit when you click submit button, value does-->
+            <!-- required - gives an error when the input is blank -->
+            <!-- if you dont want to use for attribute, we can just nest the element inside the label, BUT it is easier to style and work with 'for' attribute -->
+
+            <label for="email">Mail</label>
+            <input class="form-input" type="email" name="email" id="email" required>
+
+            <label for="message">Message</label>
+            <textarea class="form-input" id="message" name="message" cols="30" rows="10"></textarea>
+
+            <button class="submit-button" type="submit">Submit</button>
+            <!-- The <input type="submit"> defines a submit button which submits all form values to a form-handler. The form-handler is typically a server page with a script for processing the input data. The form-handler is specified in the form's action attribute. -->
+        </form>
+    </body>
+
+</html>
+
+
+<!-- <div>
+   <label for="password">Password</label>
+   <input type="password" name="passworid="password" required>
+</div> -->
+
+<!-- <div>
+   <label for="age">Age</label>
+   <input type="number" name="agid="age" min="1" max="150" step="1">
+</div> -->
+
+<!-- <div>
+   <label for="date">Birthdate</label>
+   <input type="date" name="datid="date" min="2019-06-10">
+</div> -->
+
+<!-- <div>
+   <p>Favorite food</p>
+      <div>
+        <label for="banana">Banana</label>
+        <input type="checkbox" name="banana" id="banana">
+       </div>
+       <div>
+         <label for="apple">Apple</label>
+         <input type="checkbox" name="apple" id="apple">
+        </div>
+    </div> -->
+
+<!-- Radio buttons only to share the exact same name which is how we know that there is only one to be selected -->
+<!-- we should set the value in the radio button, so we knew what we are getting back -->
+<!-- <div>
+    Gender
+    <div>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male">
+    </div>
+    <div>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+    </div>
+</div> -->
+
+<!-- <div>
+    <label for="eyeColor">Eye Color</label>
+    <select name="eyeColor" id="eyeColor" multiple>
+        <option label="Green" value="green"></option>
+        <option value="red">Red</option>
+    </select>
+</div> -->
+
+<!-- to do something fancy in javascript or on your server -->
+<!-- <div>
+    <input type="hidden" name="hidden" value="hi">
+</div> -->
+
+<!-- enctype was added for file label -->
+<!-- <div>
+    <label for="file">File</label>
+    <input id="file" type="file" name="file">
+</div> -->
+
+<!-- <div>
+    <label for="phone">Phone</label>
+    <input type="tel" name="phone" id="phone">
+</div> -->
+<!-- phone and url labels swith to a special keypad for entering phone numbers and urls on the phones -->
+<!-- <div>
+    <label for="url">URL</label>
+    <input type="url" name="url" id="url">
+</div> -->
+
+<!-- <div>
+    <label for="color">Color</label>
+    <input type="color" name="color" id="color">
+</div> -->
+
+
+<!-- resets back to default, which can be set in 'value', and if not set, it will just be blank -->
+<!-- <button type="reset">Reset</button> -->

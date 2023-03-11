@@ -1,0 +1,50 @@
+html {
+	background-color: grey;
+	padding: 10px;
+}
+
+body {
+	background-color: rgb(255, 166, 0);
+	padding: 10px;
+}
+
+.navigation {
+	background-color: white;
+	border: 5px solid black;
+	padding: 20px;
+	position: relative;
+}
+
+.nested {
+	background-color: #c52dc3;
+	color: white;
+	padding: 20px;
+	border: 5px solid #521751;
+}
+
+.content {
+	background-color: rgb(60, 97, 218);
+	color: white;
+	border: 5px solid #521751;
+	width: 50%;
+	box-sizing: border-box;
+	/* position: fixed;
+	left: 0; 
+    in this case it depends on VIEWPORT*/
+	/* position: absolute;
+     if you have position absolute applied to the element you want to change the size for, then the containing block for this element is the closest ancestor which has the position property with a value different from static applied */
+}
+
+/* content in the box model has width and height 
+box-sizing: content-box; - standard
+box-sizing: border-box; 
+border-box - If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width.
+*/
+
+/* How is the box size calculated?
+px, %, but there are more values
+*/
+
+/* 
+if you apply position: static(default) or relative to your element, then the containing block is the closest ancestor (the width of the content), which is a block level element
+*/
